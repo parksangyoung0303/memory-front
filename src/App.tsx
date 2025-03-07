@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
 import { Route, Routes } from 'react-router';
-import Layout from './layouts/Layout';
 
-// Router 구성:
+import './App.css';
+import Layout from './layouts/Layout';
+import Auth from './views/Auth';
+
+// Router 구성
 // - /auth : 로그인 및 회원가입 페이지
 
 // - /main : 메인 페이지
@@ -19,16 +21,15 @@ import Layout from './layouts/Layout';
 // - /diary/:diaryNumber : 일기 보기 페이지
 // - /diary/:diaryNumber/update : 일기 수정 페이지
 
-
 function App() {
   return (
     <Routes>
-      <Route path={'auth'} element={<>로그인 회원가입 페이지</>} />
+      <Route path={'auth'} element={<Auth />} />
 
       <Route element={<Layout />}>
         <Route path={'main'} element={<>메인 페이지</>} />
 
-        <Route path='memory-test'>
+        <Route path={'memory-test'}>
           <Route index element={<>기억력 검사 페이지</>} />
           <Route path={'complete'} element={<>기억력 검사 완료 페이지</>} />
         </Route>
@@ -40,16 +41,15 @@ function App() {
 
         <Route path={'diary'}>
           <Route index element={<>일기 메인 페이지</>} />
-            <Route path={'write'} element={<>일기 작성 페이지</>} />
+          <Route path={'write'} element={<>일기 작성 페이지</>} />
           <Route path={':diaryNumber'}>
             <Route index element={<>일기 보기 페이지</>} />
             <Route path={'update'} element={<>일기 수정 페이지</>} />
+          </Route>
         </Route>
-    </Route>
-        <Route path={'*'} element={<>404 Page!</>} />
-      </Route>
 
-      
+        <Route path={'*'} element={<>404 페이지</>} />
+      </Route>
     </Routes>
   );
 }
