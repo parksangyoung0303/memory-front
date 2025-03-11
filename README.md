@@ -56,12 +56,12 @@ npm run build
 
 ## 🗂️ 폴더 구조
 ```md
-📁 memories-front
-⊢📂 src
-⊢📂 public
-⊢📄 package.json
-⊢📄 tsconfig.json
+📂 memories-front
+├─ 📂 src
+├─ 📂 public
+├─ 📃 package.json
+└─ 📃 tsconfig.json
 ```
 
 ## 라이센스
-#### Copyright (c) 2025 Mr.Park
+#### Copyright (c) 2025 <Mr.Park>
